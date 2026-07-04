@@ -13,18 +13,43 @@
     <title>&lt;Fabi.Dev&gt;</title>
   </head>
   <body>
+    <div class="loading-screen" id="loading-screen">
+      <div class="loading-window">
+        <div class="terminal-top">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="loading-output" id="loading-output"></div>
+        <form class="terminal-command" id="terminal-command">
+          <label for="terminal-input">fabi.dev &gt;</label>
+          <input id="terminal-input" type="text" autocomplete="off" />
+        </form>
+      </div>
+    </div>
+
     <header class="site-header">
       <nav class="glass-nav">
         <ul class="nav-links">
           <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#projects">Projekte</a></li>
+          <li><a href="#about">Über mich</a></li>
+          <li><a href="#contact">Kontakt</a></li>
         </ul>
+
       </nav>
     </header>
 
-    <section class="hero">
+    <div class="glow-panel">
+      <span>Glow</span>
+      <button class="glow-button is-active" data-glow="6, 182, 212" type="button">Cyan</button>
+      <button class="glow-button" data-glow="124, 58, 237" type="button">Purple</button>
+      <button class="glow-button" data-glow="239, 68, 68" type="button">Red</button>
+    </div>
+
+    <button class="scroll-top-button" type="button" aria-label="Nach oben scrollen">Top</button>
+
+    <section class="hero" id="home">
       <div class="hero-card">
         <p class="hero-label">Webentwicklung / JavaScript / Projekte</p>
         <h1>&lt;Fabi.Dev&gt;</h1>
@@ -32,6 +57,7 @@
           Ich lerne Webentwicklung, baue eigene Projekte und dokumentiere hier
           meinen Fortschritt.
         </p>
+
         <a class="hero-button" href="#projects">Projekte ansehen</a>
       </div>
     </section>
