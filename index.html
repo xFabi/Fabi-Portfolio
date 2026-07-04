@@ -1,35 +1,89 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="de">
-<head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Fabis-Portfolio</title>
-</head>
-<body>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>&lt;Fabi.Dev&gt;</title>
+  </head>
+  <body>
     <header class="site-header">
-       <nav class="glass-nav">
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+      <nav class="glass-nav">
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </header>
 
     <section class="hero">
-        <div class="hero-card">
-            <p class="hero-label">Webentwicklung / JavaScript / Projekte</p>
-            <h1>&lt;Fabi.Dev&gt;</h1>
-            <p class="hero-text">Ich lerne Webentwicklung, baue eigene Projekte und dokumentiere hier meinen Fortschritt.</p>
-            <a class="hero-button" href="#projects">Projekte ansehen</a>
-        </div>
+      <div class="hero-card">
+        <p class="hero-label">Webentwicklung / JavaScript / Projekte</p>
+        <h1>&lt;Fabi.Dev&gt;</h1>
+        <p class="hero-text">
+          Ich lerne Webentwicklung, baue eigene Projekte und dokumentiere hier
+          meinen Fortschritt.
+        </p>
+        <a class="hero-button" href="#projects">Projekte ansehen</a>
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <div class="section-header">
+        <p class="section-label">Meine Projekte</p>
+        <h2>Was ich gerade baue und lerne</h2>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-card-inner">
+            <div class="project-card-face project-card-front">
+              <div class="project-card-top">
+                <p class="project-status">In Arbeit</p>
+                <span class="project-number">01</span>
+              </div>
+
+              <h3>&lt;Fabi.Dev&gt;</h3>
+              <p>Meine eigene Lern- und Projektseite.</p>
+
+              <div class="project-card-bottom">
+                <div class="project-tags">
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>Git</span>
+                </div>
+
+                <button class="project-arrow" type="button">→</button>
+              </div>
+            </div>
+
+            <div class="project-card-face project-card-back">
+              <div class="project-back-top">
+                <p class="project-status">Beschreibung</p>
+                <button class="project-arrow" type="button">←</button>
+              </div>
+
+              <div class="project-back-content">
+                <h3>Was steckt drin?</h3>
+                <p>
+                  Dieses Portfolio ist meine Lernseite. Hier zeige ich Projekte,
+                  JavaScript-Übungen und meinen Fortschritt als Entwickler.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
     </section>
 
     <script src="main.js"></script>
-</body>
+  </body>
 </html>

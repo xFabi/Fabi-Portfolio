@@ -172,3 +172,186 @@ p {
   background: rgba(255, 255, 255, 0.11);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
+
+.projects {
+  max-width: 1280px;
+  margin: 120px auto 0;
+  padding-bottom: 120px;
+}
+
+.section-header {
+  margin-bottom: 32px;
+}
+
+.section-label {
+  color: #06b6d4;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.section-header h2 {
+  margin-top: 10px;
+  font-size: 42px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.project-card {
+  position: relative;
+  min-height: 360px;
+  border-radius: 28px;
+  perspective: 1000px;
+}
+
+.project-card-inner {
+  position: relative;
+  min-height: 360px;
+  transition: transform 0.7s ease;
+  transform-style: preserve-3d;
+}
+
+.project-card.is-flipped .project-card-inner {
+  transform: rotateY(180deg);
+}
+
+.project-card-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  border-radius: 28px;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(2, 6, 23, 0.68), rgba(2, 6, 23, 0.68)) padding-box,
+    linear-gradient(135deg, rgba(124, 58, 237, 0.42), rgba(6, 182, 212, 0.34), rgba(255, 255, 255, 0.08)) border-box;
+  border: 1px solid transparent;
+  backdrop-filter: blur(22px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 24px 70px rgba(0, 0, 0, 0.24),
+    0 0 28px rgba(6, 182, 212, 0.06);
+  backface-visibility: hidden;
+}
+
+.project-card-back {
+  transform: rotateY(180deg);
+}
+
+.project-back-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.project-card-face::before {
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07), transparent 45%),
+    radial-gradient(circle at 18% 12%, rgba(124, 58, 237, 0.1), transparent 30%),
+    radial-gradient(circle at 90% 8%, rgba(6, 182, 212, 0.08), transparent 34%);
+  content: "";
+  pointer-events: none;
+}
+
+.project-card-face > * {
+  position: relative;
+  z-index: 1;
+}
+
+.project-card-top,
+.project-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.project-number {
+  color: rgba(255, 255, 255, 0.28);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.project-status {
+  width: fit-content;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(6, 182, 212, 0.12);
+  color: #06b6d4;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.project-card-front h3 {
+  margin-top: 42px;
+  font-size: 28px;
+}
+
+.project-card-front > p:not(.project-status) {
+  margin-top: 14px;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.6;
+}
+
+.project-back-content h3 {
+  margin-top: 34px;
+  font-size: 26px;
+}
+
+.project-back-content p:not(.project-status) {
+  max-width: 92%;
+  margin-top: 16px;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.55;
+}
+
+.project-tags {
+  display: flex;
+  gap: 10px;
+  margin-top: 0;
+}
+
+.project-tags span {
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: rgba(216, 205, 205, 0.08);
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 13px;
+}
+
+.project-card-bottom {
+  margin-top: auto;
+  padding-top: 36px;
+}
+
+.project-arrow {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: inherit;
+  text-decoration: none;
+}
+
+.project-arrow:hover {
+  background: rgba(6, 182, 212, 0.16);
+  border-color: rgba(6, 182, 212, 0.38);
+}
