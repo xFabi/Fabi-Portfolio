@@ -198,6 +198,7 @@ function setupTerminalCommands() {
   const loadingOutput = document.querySelector("#loading-output");
   const terminalForm = document.querySelector("#terminal-command");
   const terminalInput = document.querySelector("#terminal-input");
+  const skills = ["HTML", "CSS", "JavaScript", "Git"];
 
   if (!loadingOutput || !terminalForm || !terminalInput) {
     return;
@@ -215,7 +216,11 @@ function setupTerminalCommands() {
 
     if (command === "help") {
       loadingOutput.innerHTML += `
-        <div class="terminal-line">Befehle: home, projects, about, contact, start</div>
+        <div class="terminal-line">Befehle: home, projects, about, contact, skills, start</div>
+      `;
+    } else if (command === "skills") {
+      loadingOutput.innerHTML += `
+        <div class="terminal-line">Meine Skills: ${skills.join(", ")}</div>
       `;
     } else if (command === "home") {
       closeLoadingScreen();
