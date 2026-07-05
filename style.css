@@ -1,7 +1,8 @@
+/* Basis */
+
 h1,
 h2,
-h3,
-.logo-text {
+h3 {
   font-family: "Space Grotesk", sans-serif;
 }
 
@@ -14,6 +15,7 @@ body {
   font-family: "Inter", sans-serif;
   background-color: #020617;
   color: white;
+  overflow-x: hidden;
 }
 
 body.is-loading {
@@ -56,10 +58,6 @@ body::after {
     linear-gradient(90deg, rgba(124, 58, 237, 0.11) 1px, transparent 1px),
     linear-gradient(180deg, transparent, rgba(6, 182, 212, 0.035), transparent);
   background-size: 64px 64px, 64px 64px, 100% 240px;
-  background-position:
-    var(--grid-shift-x) var(--grid-shift-y),
-    var(--grid-shift-x) var(--grid-shift-y),
-    0 var(--grid-shift-y);
   box-shadow: inset 0 0 120px rgba(6, 182, 212, 0.08);
   mask-image: radial-gradient(circle at 50% 28%, black, transparent 78%);
   animation: gridMove 18s linear infinite;
@@ -104,20 +102,9 @@ p {
 
 :root {
   --glow-color: 6, 182, 212;
-  --page-mouse-x: 50%;
-  --page-mouse-y: 50%;
-  --grid-shift-x: 0px;
-  --grid-shift-y: 0px;
 }
 
-body::before {
-  background:
-    radial-gradient(circle at 18% 10%, rgba(124, 58, 237, 0.14), transparent 28%),
-    radial-gradient(circle at 80% 34%, rgba(6, 182, 212, 0.1), transparent 30%),
-    #020617;
-}
-
-
+/* Hero */
 
 .hero {
   display: flex;
@@ -173,6 +160,8 @@ body::before {
   font-size: 17px;
   line-height: 1.6;
 }
+
+/* Lade-Terminal */
 
 .loading-screen {
   position: fixed;
@@ -334,6 +323,7 @@ body::before {
   background: rgba(6, 182, 212, 0.16);
 }
 
+/* Navigation */
 
 .site-header {
   position: sticky;
@@ -341,30 +331,6 @@ body::before {
   z-index: 30;
   padding: 24px 48px;
   pointer-events: none;
-}
-
-.glass-nav {
-  pointer-events: auto;
-}
-
-.brand {
-  position: absolute;
-  left: 48px;
-  top: 24px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.logo-img {
-  width: 44px;
-  height: 44px;
-  object-fit: contain;
-}
-
-.logo-text {
-  font-size: 22px;
-  font-weight: 700;
 }
 
 .glass-nav {
@@ -378,6 +344,7 @@ body::before {
     linear-gradient(90deg, rgba(124, 58, 237, 0.9), rgba(6, 182, 212, 0.9)) border-box;
   border: 1px solid transparent;
   backdrop-filter: blur(22px);
+  pointer-events: auto;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.16),
     inset 0 -18px 35px rgba(255, 255, 255, 0.035),
@@ -426,6 +393,8 @@ body::before {
     inset 0 1px 0 rgba(255, 255, 255, 0.14),
     0 0 24px rgba(var(--glow-color), 0.18);
 }
+
+/* Floating Buttons */
 
 .glow-panel {
   position: fixed;
@@ -503,10 +472,13 @@ body::before {
   background: rgba(var(--glow-color), 0.18);
 }
 
+/* Inhalt / Sections */
+
 .projects {
   max-width: 1280px;
   margin: 120px auto 0;
   padding-bottom: 120px;
+  scroll-margin-top: 120px;
 }
 
 .about,
@@ -515,6 +487,12 @@ body::before {
 .site-footer {
   max-width: 1280px;
   margin: 0 auto;
+}
+
+.about,
+.learning,
+.contact {
+  scroll-margin-top: 120px;
 }
 
 .section-header {
@@ -550,9 +528,11 @@ body::before {
   font-size: 42px;
 }
 
+/* Projektkarten */
+
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
   gap: 24px;
 }
 
@@ -711,6 +691,8 @@ body::before {
   border-color: rgba(6, 182, 212, 0.38);
 }
 
+/* Info- und Lernkarten */
+
 .about,
 .learning {
   padding-bottom: 120px;
@@ -719,13 +701,12 @@ body::before {
 .about-grid,
 .learning-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
   gap: 24px;
-  box-shadow: 0 30px 100px rgba(var(--glow-color), 0.18);
 }
 
 .learning-grid {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
 }
 
 .info-card,
@@ -737,7 +718,9 @@ body::before {
     linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(6, 182, 212, 0.26)) border-box;
   border: 1px solid transparent;
   backdrop-filter: blur(18px);
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.2);
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.2),
+    0 18px 70px rgba(var(--glow-color), 0.1);
 
 }
 
@@ -830,6 +813,10 @@ body::before {
   background: rgba(255, 255, 255, 0.12);
 }
 
+
+/* Footer und Rechtliches */
+
+
 .site-footer {
   display: flex;
   justify-content: space-between;
@@ -913,6 +900,9 @@ body::before {
   line-height: 1.7;
 }
 
+/* Responsive Design  */
+
+
 @media (max-width: 1320px) {
   .hero,
   .projects,
@@ -960,16 +950,23 @@ body::before {
 
 @media (max-width: 640px) {
   .site-header {
-    padding: 18px 14px;
+    padding: 10px 12px;
   }
 
   .glass-nav {
     width: 100%;
+    padding: 6px;
     overflow-x: auto;
   }
 
   .nav-links {
+    gap: 2px;
     min-width: max-content;
+  }
+
+  .nav-links a {
+    padding: 8px 10px;
+    font-size: 13px;
   }
 
   .hero,
@@ -985,6 +982,19 @@ body::before {
   .hero {
     margin-top: 44px;
     border-radius: 28px;
+  }
+
+  .projects,
+  .about,
+  .learning,
+  .contact {
+    scroll-margin-top: 92px;
+  }
+
+  .about,
+  .learning,
+  .contact {
+    padding-top: 78px;
   }
 
   .hero-card h1 {

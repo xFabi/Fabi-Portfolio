@@ -1,4 +1,7 @@
-﻿function createProjectTags(tags) {
+﻿
+// Projekte rendern
+
+function createProjectTags(tags) {
   let tagsHtml = "";
 
   tags.forEach(function (tag) {
@@ -28,14 +31,14 @@ function createProjectCard(project) {
               ${tagsHtml}
             </div>
 
-            <button class="project-arrow" type="button">→</button>
+            <button class="project-arrow" type="button">&rarr;</button>
           </div>
         </div>
 
         <div class="project-card-face project-card-back">
           <div class="project-back-top">
             <p class="project-status">Beschreibung</p>
-            <button class="project-arrow" type="button">←</button>
+            <button class="project-arrow" type="button">&larr;</button>
           </div>
 
           <div class="project-back-content">
@@ -74,6 +77,10 @@ function setupProjectCards() {
     });
   });
 }
+
+
+// UI Buttons
+
 
 function setupGlowButtons() {
   const glowButtons = document.querySelectorAll(".glow-button");
@@ -116,6 +123,10 @@ function setupScrollTopButton() {
   });
 }
 
+
+// Navigation
+
+
 function setupActiveNavLinks() {
   const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
 
@@ -157,18 +168,6 @@ function setupActiveNavLinks() {
   updateActiveNavLink();
 }
 
-function setupPageMouseGlow() {
-  document.addEventListener("mousemove", function (event) {
-    const mouseX = event.clientX / window.innerWidth - 0.5;
-    const mouseY = event.clientY / window.innerHeight - 0.5;
-    const gridShiftX = mouseX * 18;
-    const gridShiftY = mouseY * 18;
-
-    document.documentElement.style.setProperty("--grid-shift-x", gridShiftX + "px");
-    document.documentElement.style.setProperty("--grid-shift-y", gridShiftY + "px");
-  });
-}
-
 function scrollToSection(sectionId) {
   const section = document.querySelector(sectionId);
 
@@ -180,6 +179,9 @@ function scrollToSection(sectionId) {
     behavior: "smooth",
   });
 }
+ 
+// Terminal / Ladefenster
+
 
 function closeLoadingScreen() {
   const loadingScreen = document.querySelector("#loading-screen");
@@ -238,12 +240,11 @@ function setupTerminalCommands() {
 }
 
 function startLoadingScreen() {
-  const loadingScreen = document.querySelector("#loading-screen");
   const loadingOutput = document.querySelector("#loading-output");
   const terminalForm = document.querySelector("#terminal-command");
   const terminalInput = document.querySelector("#terminal-input");
 
-  if (!loadingScreen || !loadingOutput || !terminalForm || !terminalInput) {
+  if (!loadingOutput || !terminalForm || !terminalInput) {
     return;
   }
 
@@ -261,7 +262,7 @@ function startLoadingScreen() {
   function writeNextLine() {
     if (lineIndex >= loadingLines.length) {
       loadingOutput.innerHTML += `
-        <div class="terminal-line">Tippe help und drücke Enter.</div>
+        <div class="terminal-line">Tippe help und druecke Enter.</div>
         <span class="terminal-cursor"></span>
       `;
 
@@ -282,11 +283,14 @@ function startLoadingScreen() {
   writeNextLine();
 }
 
+
+// App starten
+
+
 loadProjects();
 setupProjectCards();
 setupGlowButtons();
 setupScrollTopButton();
 setupActiveNavLinks();
-setupPageMouseGlow();
 setupTerminalCommands();
 startLoadingScreen();
